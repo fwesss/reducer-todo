@@ -1,4 +1,5 @@
 import { createReducer, updateItemInArray, updateObject } from '../utils/reducerFunctions';
+import Todo from '../interfaces/Todo';
 
 export const initialState = {
   todos: [
@@ -10,29 +11,38 @@ export const initialState = {
   ]
 };
 
-const addTodo = (todosState, action) =>
+const addTodo = (
+  todosState: readonly Todo[],
+  action: { readonly item: string; readonly id: number }
+): readonly Todo[] =>
   todosState.concat({
     item: action.item,
     completed: false,
     id: action.id
   });
 
-const toggleTodo = (todosState, action) =>
+const toggleTodo = (
+  todosState: readonly Todo[],
+  action: { readonly id: number }
+): readonly object[] =>
   updateItemInArray(todosState, action.id, todo => {
     return updateObject(todo, { completed: !todo.completed });
   });
 
-const clearCompleted = todoState =>
+const clearCompleted = (todoState: readonly Todo[]): readonly Todo[] =>
   todoState.filter(todo => {
     return !todo.completed;
   });
 
-const todosReducer = createReducer([], {
-  ADD_TODO: addTodo,
-  TOGGLE_TODO: toggleTodo,
-  CLEAR_COMPLETED: clearCompleted
+const todosReducer = createReducer({
+  initialState: [],
+  handlers: {
+    ADD_TODO: addTodo,
+    TOGGLE_TODO: toggleTodo,
+    CLEAR_COMPLETED: clearCompleted
+  }
 });
 
-export const appReducer = (state = initialState, action) => ({
+export const appReducer = (state = initialState, action: {}): {} => ({
   todos: todosReducer(state.todos, action)
 });

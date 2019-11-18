@@ -13,9 +13,11 @@
     "airbnb",
     "airbnb/hooks",
     "plugin:eslint-comments/recommended",
+    "plugin:promise/recommended",
+
+    // functional programming
     "plugin:fp/recommended",
     "plugin:functional/recommended",
-    "plugin:promise/recommended",
 
     // testing
     "plugin:jest/recommended",
@@ -63,7 +65,9 @@
   "rules": {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "optimize-regex/optimize-regex": "warn"
+    "optimize-regex/optimize-regex": "warn",
+    "react/jsx-filename-extension": "off",
+    "react/prop-types": "off"
   },
   "settings": {
     "import/resolver": {
