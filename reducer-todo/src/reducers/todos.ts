@@ -1,5 +1,6 @@
 import { createReducer, updateItemInArray, updateObject } from '../utils/reducerFunctions';
 import Todo from '../interfaces/Todo';
+import State from '../interfaces/State';
 
 export const initialState = {
   todos: [
@@ -25,7 +26,7 @@ const toggleTodo = (
   todosState: readonly Todo[],
   action: { readonly id: number }
 ): readonly object[] =>
-  updateItemInArray(todosState, action.id, todo => {
+  updateItemInArray(todosState, action.id, (todo: { readonly completed: boolean }) => {
     return updateObject(todo, { completed: !todo.completed });
   });
 
@@ -43,6 +44,9 @@ const todosReducer = createReducer({
   }
 });
 
-export const appReducer = (state = initialState, action: {}): {} => ({
+export const appReducer = (
+  state: State = initialState,
+  action: { readonly type: string }
+): State => ({
   todos: todosReducer(state.todos, action)
 });

@@ -4,9 +4,25 @@
 
 ## Index
 
+### Type aliases
+
+* [TodoFormProps](_components_todoform_.md#todoformprops)
+
 ### Functions
 
 * [TodoForm](_components_todoform_.md#const-todoform)
+
+## Type aliases
+
+###  TodoFormProps
+
+Ƭ **TodoFormProps**: *object*
+
+*Defined in [src/components/TodoForm.tsx:4](https://github.com/fwesss/reducer-todo/blob/580bc2f/reducer-todo/src/components/TodoForm.tsx#L4)*
+
+#### Type declaration:
+
+* **dispatch**: *React.Dispatch‹object›*
 
 ## Functions
 
@@ -14,7 +30,7 @@
 
 ▸ **TodoForm**(`__namedParameters`: object): *Element‹›*
 
-*Defined in [components/TodoForm.tsx:4](https://github.com/fwesss/reducer-todo/blob/dca7223/reducer-todo/src/components/TodoForm.tsx#L4)*
+*Defined in [src/components/TodoForm.tsx:12](https://github.com/fwesss/reducer-todo/blob/580bc2f/reducer-todo/src/components/TodoForm.tsx#L12)*
 
 **Parameters:**
 
@@ -22,7 +38,6 @@
 
 Name | Type |
 ------ | ------ |
-`dispatch` | any |
-`state` | any |
+`dispatch` | function |
 
 **Returns:** *Element‹›*

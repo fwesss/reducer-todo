@@ -1,20 +1,30 @@
-import React, { useState } from 'react';
+import React, { FunctionComponent, SyntheticEvent, useState } from 'react';
 import { Button, TextField } from '@material-ui/core';
 
-const TodoForm = ({ state, dispatch }) => {
+type TodoFormProps = {
+  readonly dispatch: React.Dispatch<{
+    readonly type: string;
+    readonly id?: number;
+    readonly item?: string;
+  }>;
+};
+
+const TodoForm: FunctionComponent<TodoFormProps> = ({ dispatch }) => {
   const [value, setValue] = useState('');
 
-  const handleSubmit = e => {
+  const handleSubmit = (e: SyntheticEvent): void => {
     e.preventDefault();
-    dispatch({ type: 'ADD_TODO', id: new Date(), item: value });
+    dispatch({ type: 'ADD_TODO', id: new Date().getTime(), item: value });
     setValue('');
   };
 
-  const handleChange = e => {
+  const handleChange = (e: {
+    readonly target: { readonly value: React.SetStateAction<string> };
+  }): void => {
     return setValue(e.target.value);
   };
 
-  const handleClear = () => {
+  const handleClear = (): void => {
     return dispatch({ type: 'CLEAR_COMPLETED' });
   };
 

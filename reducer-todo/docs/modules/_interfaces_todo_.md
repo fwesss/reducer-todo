@@ -14,7 +14,7 @@
 
 Ƭ **Todo**: *object*
 
-*Defined in [interfaces/Todo.ts:1](https://github.com/fwesss/reducer-todo/blob/dca7223/reducer-todo/src/interfaces/Todo.ts#L1)*
+*Defined in [src/interfaces/Todo.ts:1](https://github.com/fwesss/reducer-todo/blob/580bc2f/reducer-todo/src/interfaces/Todo.ts#L1)*
 
 #### Type declaration:
 

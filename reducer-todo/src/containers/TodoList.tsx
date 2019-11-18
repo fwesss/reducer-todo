@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { Paper } from '@material-ui/core';
 
 import Todo from '../components/Todo';
+import State from '../interfaces/State';
 
-const TodoList = ({ state, dispatch }) => {
+type TodoListProps = {
+  readonly state: State;
+  readonly dispatch: React.Dispatch<{ readonly type: string }>;
+};
+
+const TodoList: FunctionComponent<TodoListProps> = ({ state, dispatch }) => {
   return (
     <Paper>
       {state.todos.map(todo => (

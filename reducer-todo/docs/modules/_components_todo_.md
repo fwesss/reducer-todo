@@ -4,9 +4,33 @@
 
 ## Index
 
+### Type aliases
+
+* [TodoProps](_components_todo_.md#todoprops)
+
 ### Functions
 
 * [Todo](_components_todo_.md#const-todo)
+
+## Type aliases
+
+###  TodoProps
+
+Ƭ **TodoProps**: *object*
+
+*Defined in [src/components/Todo.tsx:4](https://github.com/fwesss/reducer-todo/blob/580bc2f/reducer-todo/src/components/Todo.tsx#L4)*
+
+#### Type declaration:
+
+* **dispatch**: *React.Dispatch‹object›*
+
+* **todo**(): *object*
+
+  * **completed**: *boolean*
+
+  * **id**: *number*
+
+  * **item**: *string*
 
 ## Functions
 
@@ -14,7 +38,7 @@
 
 ▸ **Todo**(`__namedParameters`: object): *Element‹›*
 
-*Defined in [components/Todo.tsx:4](https://github.com/fwesss/reducer-todo/blob/dca7223/reducer-todo/src/components/Todo.tsx#L4)*
+*Defined in [src/components/Todo.tsx:13](https://github.com/fwesss/reducer-todo/blob/580bc2f/reducer-todo/src/components/Todo.tsx#L13)*
 
 **Parameters:**
 
@@ -22,7 +46,7 @@
 
 Name | Type |
 ------ | ------ |
-`dispatch` | any |
-`todo` | any |
+`dispatch` | function |
+`todo` | object |
 
 **Returns:** *Element‹›*

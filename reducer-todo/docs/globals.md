@@ -11,6 +11,8 @@
 * ["containers/App"](modules/_containers_app_.md)
 * ["containers/TodoList"](modules/_containers_todolist_.md)
 * ["index"](modules/_index_.md)
+* ["interfaces/Handlers"](modules/_interfaces_handlers_.md)
+* ["interfaces/State"](modules/_interfaces_state_.md)
 * ["interfaces/Todo"](modules/_interfaces_todo_.md)
 * ["reducers/todos"](modules/_reducers_todos_.md)
 * ["tests/App.test"](modules/_tests_app_test_.md)

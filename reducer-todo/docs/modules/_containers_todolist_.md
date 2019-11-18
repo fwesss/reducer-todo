@@ -4,9 +4,27 @@
 
 ## Index
 
+### Type aliases
+
+* [TodoListProps](_containers_todolist_.md#todolistprops)
+
 ### Functions
 
 * [TodoList](_containers_todolist_.md#const-todolist)
+
+## Type aliases
+
+###  TodoListProps
+
+Ƭ **TodoListProps**: *object*
+
+*Defined in [src/containers/TodoList.tsx:7](https://github.com/fwesss/reducer-todo/blob/580bc2f/reducer-todo/src/containers/TodoList.tsx#L7)*
+
+#### Type declaration:
+
+* **dispatch**: *React.Dispatch‹object›*
+
+* **state**: *[State](_interfaces_state_.md#state)*
 
 ## Functions
 
@@ -14,7 +32,7 @@
 
 ▸ **TodoList**(`__namedParameters`: object): *Element‹›*
 
-*Defined in [containers/TodoList.tsx:6](https://github.com/fwesss/reducer-todo/blob/dca7223/reducer-todo/src/containers/TodoList.tsx#L6)*
+*Defined in [src/containers/TodoList.tsx:12](https://github.com/fwesss/reducer-todo/blob/580bc2f/reducer-todo/src/containers/TodoList.tsx#L12)*
 
 **Parameters:**
 
@@ -22,7 +40,7 @@
 
 Name | Type |
 ------ | ------ |
-`dispatch` | any |
-`state` | any |
+`dispatch` | function |
+`state` | object |
 
 **Returns:** *Element‹›*

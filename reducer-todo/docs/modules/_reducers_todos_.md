@@ -23,91 +23,93 @@
 
 ### `Const` todosReducer
 
-• **todosReducer**: *reducer* =  createReducer([], {
-  ADD_TODO: addTodo,
-  TOGGLE_TODO: toggleTodo,
-  CLEAR_COMPLETED: clearCompleted
+• **todosReducer**: *reducer* =  createReducer({
+  initialState: [],
+  handlers: {
+    ADD_TODO: addTodo,
+    TOGGLE_TODO: toggleTodo,
+    CLEAR_COMPLETED: clearCompleted
+  }
 })
 
-*Defined in [reducers/todos.ts:30](https://github.com/fwesss/reducer-todo/blob/dca7223/reducer-todo/src/reducers/todos.ts#L30)*
+*Defined in [src/reducers/todos.ts:38](https://github.com/fwesss/reducer-todo/blob/580bc2f/reducer-todo/src/reducers/todos.ts#L38)*
 
 ## Functions
 
 ### `Const` addTodo
 
-▸ **addTodo**(`todosState`: any, `action`: any): *any*
+▸ **addTodo**(`todosState`: keyof Todo[], `action`: object): *keyof Todo[]*
 
-*Defined in [reducers/todos.ts:13](https://github.com/fwesss/reducer-todo/blob/dca7223/reducer-todo/src/reducers/todos.ts#L13)*
+*Defined in [src/reducers/todos.ts:15](https://github.com/fwesss/reducer-todo/blob/580bc2f/reducer-todo/src/reducers/todos.ts#L15)*
 
 **Parameters:**
 
+▪ **todosState**: *keyof Todo[]*
+
+▪ **action**: *object*
+
 Name | Type |
 ------ | ------ |
-`todosState` | any |
-`action` | any |
+`id` | number |
+`item` | string |
 
-**Returns:** *any*
+**Returns:** *keyof Todo[]*
 
 ___
 
 ### `Const` appReducer
 
-▸ **appReducer**(`state`: object, `action`: any): *object*
+▸ **appReducer**(`state`: [State](_interfaces_state_.md#state), `action`: object): *[State](_interfaces_state_.md#state)*
 
-*Defined in [reducers/todos.ts:36](https://github.com/fwesss/reducer-todo/blob/dca7223/reducer-todo/src/reducers/todos.ts#L36)*
+*Defined in [src/reducers/todos.ts:47](https://github.com/fwesss/reducer-todo/blob/580bc2f/reducer-todo/src/reducers/todos.ts#L47)*
 
 **Parameters:**
 
-▪`Default value`  **state**: *object*=  initialState
+▪`Default value`  **state**: *[State](_interfaces_state_.md#state)*=  initialState
 
-Name | Type | Default |
------- | ------ | ------ |
-`todos` | object[] |  [
-    {
-      item: 'Learn about reducers',
-      completed: false,
-      id: 3892987589
-    }
-  ] |
+▪ **action**: *object*
 
-▪ **action**: *any*
+Name | Type |
+------ | ------ |
+`type` | string |
 
-**Returns:** *object*
-
-* **todos**: *any* =  todosReducer(state.todos, action)
+**Returns:** *[State](_interfaces_state_.md#state)*
 
 ___
 
 ### `Const` clearCompleted
 
-▸ **clearCompleted**(`todoState`: any): *any*
+▸ **clearCompleted**(`todoState`: keyof Todo[]): *keyof Todo[]*
 
-*Defined in [reducers/todos.ts:25](https://github.com/fwesss/reducer-todo/blob/dca7223/reducer-todo/src/reducers/todos.ts#L25)*
+*Defined in [src/reducers/todos.ts:33](https://github.com/fwesss/reducer-todo/blob/580bc2f/reducer-todo/src/reducers/todos.ts#L33)*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`todoState` | any |
+`todoState` | keyof Todo[] |
 
-**Returns:** *any*
+**Returns:** *keyof Todo[]*
 
 ___
 
 ### `Const` toggleTodo
 
-▸ **toggleTodo**(`todosState`: any, `action`: any): *any*
+▸ **toggleTodo**(`todosState`: keyof Todo[], `action`: object): *keyof object[]*
 
-*Defined in [reducers/todos.ts:20](https://github.com/fwesss/reducer-todo/blob/dca7223/reducer-todo/src/reducers/todos.ts#L20)*
+*Defined in [src/reducers/todos.ts:25](https://github.com/fwesss/reducer-todo/blob/580bc2f/reducer-todo/src/reducers/todos.ts#L25)*
 
 **Parameters:**
 
+▪ **todosState**: *keyof Todo[]*
+
+▪ **action**: *object*
+
 Name | Type |
 ------ | ------ |
-`todosState` | any |
-`action` | any |
+`id` | number |
 
-**Returns:** *any*
+**Returns:** *keyof object[]*
 
 ## Object literals
 
@@ -115,7 +117,7 @@ Name | Type |
 
 ### ▪ **initialState**: *object*
 
-*Defined in [reducers/todos.ts:3](https://github.com/fwesss/reducer-todo/blob/dca7223/reducer-todo/src/reducers/todos.ts#L3)*
+*Defined in [src/reducers/todos.ts:5](https://github.com/fwesss/reducer-todo/blob/580bc2f/reducer-todo/src/reducers/todos.ts#L5)*
 
 ###  todos
 
@@ -127,4 +129,4 @@ Name | Type |
     }
   ]
 
-*Defined in [reducers/todos.ts:4](https://github.com/fwesss/reducer-todo/blob/dca7223/reducer-todo/src/reducers/todos.ts#L4)*
+*Defined in [src/reducers/todos.ts:6](https://github.com/fwesss/reducer-todo/blob/580bc2f/reducer-todo/src/reducers/todos.ts#L6)*

@@ -4,26 +4,46 @@
 
 ## Index
 
+### Type aliases
+
+* [CreateReducerParams](_utils_reducerfunctions_.md#createreducerparams)
+
 ### Functions
 
 * [createReducer](_utils_reducerfunctions_.md#createreducer)
 * [updateItemInArray](_utils_reducerfunctions_.md#const-updateiteminarray)
 * [updateObject](_utils_reducerfunctions_.md#const-updateobject)
 
+## Type aliases
+
+###  CreateReducerParams
+
+Ƭ **CreateReducerParams**: *object*
+
+*Defined in [src/utils/reducerFunctions.ts:20](https://github.com/fwesss/reducer-todo/blob/580bc2f/reducer-todo/src/utils/reducerFunctions.ts#L20)*
+
+#### Type declaration:
+
+* **handlers**: *[HandlersFunctions](_interfaces_handlers_.md#handlersfunctions) & [HandlersIndex](_interfaces_handlers_.md#handlersindex)*
+
+* **initialState**: *keyof Todo[]*
+
 ## Functions
 
 ###  createReducer
 
-▸ **createReducer**(`initialState`: any, `handlers`: any): *reducer*
+▸ **createReducer**(`__namedParameters`: object): *reducer*
 
-*Defined in [utils/reducerFunctions.ts:11](https://github.com/fwesss/reducer-todo/blob/dca7223/reducer-todo/src/utils/reducerFunctions.ts#L11)*
+*Defined in [src/utils/reducerFunctions.ts:25](https://github.com/fwesss/reducer-todo/blob/580bc2f/reducer-todo/src/utils/reducerFunctions.ts#L25)*
 
 **Parameters:**
 
+▪ **__namedParameters**: *object*
+
 Name | Type |
 ------ | ------ |
-`initialState` | any |
-`handlers` | any |
+`handlers` | object & object |
+`initialState` | ReadonlyArray‹object› |
 
 **Returns:** *reducer*
 
@@ -31,33 +51,49 @@ ___
 
 ### `Const` updateItemInArray
 
-▸ **updateItemInArray**(`array`: any, `itemId`: any, `updateItemCallback`: any): *any*
+▸ **updateItemInArray**(`array`: keyof Todo[], `itemId`: number, `updateItemCallback`: function): *keyof object[]*
 
-*Defined in [utils/reducerFunctions.ts:5](https://github.com/fwesss/reducer-todo/blob/dca7223/reducer-todo/src/utils/reducerFunctions.ts#L5)*
+*Defined in [src/utils/reducerFunctions.ts:8](https://github.com/fwesss/reducer-todo/blob/580bc2f/reducer-todo/src/utils/reducerFunctions.ts#L8)*
 
 **Parameters:**
 
+▪ **array**: *keyof Todo[]*
+
+▪ **itemId**: *number*
+
+▪ **updateItemCallback**: *function*
+
+▸ (`todo`: object): *object*
+
+**Parameters:**
+
+▪ **todo**: *object*
+
 Name | Type |
 ------ | ------ |
-`array` | any |
-`itemId` | any |
-`updateItemCallback` | any |
+`completed` | boolean |
 
-**Returns:** *any*
+* **completed**: *boolean*
+
+**Returns:** *keyof object[]*
 
 ___
 
 ### `Const` updateObject
 
-▸ **updateObject**(`oldObject`: any, `newValues`: any): *any*
+▸ **updateObject**<**T**>(`oldObject`: T, `newValues`: T): *T*
 
-*Defined in [utils/reducerFunctions.ts:1](https://github.com/fwesss/reducer-todo/blob/dca7223/reducer-todo/src/utils/reducerFunctions.ts#L1)*
+*Defined in [src/utils/reducerFunctions.ts:4](https://github.com/fwesss/reducer-todo/blob/580bc2f/reducer-todo/src/utils/reducerFunctions.ts#L4)*
+
+**Type parameters:**
+
+▪ **T**: *__type*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`oldObject` | any |
-`newValues` | any |
+`oldObject` | T |
+`newValues` | T |
 
-**Returns:** *any*
+**Returns:** *T*
