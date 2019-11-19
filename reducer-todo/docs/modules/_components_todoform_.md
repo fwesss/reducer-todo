@@ -18,11 +18,23 @@
 
 Ƭ **TodoFormProps**: *object*
 
-*Defined in [src/components/TodoForm.tsx:4](https://github.com/fwesss/reducer-todo/blob/580bc2f/reducer-todo/src/components/TodoForm.tsx#L4)*
+*Defined in [src/components/TodoForm.tsx:7](https://github.com/fwesss/reducer-todo/blob/24fbc8d/reducer-todo/src/components/TodoForm.tsx#L7)*
 
 #### Type declaration:
 
-* **dispatch**: *React.Dispatch‹object›*
+* **handleChange**(): *function*
+
+  * (`e`: object): *void*
+
+* **handleClear**(): *function*
+
+  * (): *void*
+
+* **handleSubmit**(): *function*
+
+  * (`e`: SyntheticEvent): *void*
+
+* **value**: *string*
 
 ## Functions
 
@@ -30,7 +42,7 @@
 
 ▸ **TodoForm**(`__namedParameters`: object): *Element‹›*
 
-*Defined in [src/components/TodoForm.tsx:12](https://github.com/fwesss/reducer-todo/blob/580bc2f/reducer-todo/src/components/TodoForm.tsx#L12)*
+*Defined in [src/components/TodoForm.tsx:16](https://github.com/fwesss/reducer-todo/blob/24fbc8d/reducer-todo/src/components/TodoForm.tsx#L16)*
 
 **Parameters:**
 
@@ -38,6 +50,9 @@
 
 Name | Type |
 ------ | ------ |
-`dispatch` | function |
+`handleChange` | function |
+`handleClear` | function |
+`handleSubmit` | function |
+`value` | string |
 
 **Returns:** *Element‹›*

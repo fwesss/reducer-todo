@@ -18,11 +18,13 @@
 
 Ƭ **TodoProps**: *object*
 
-*Defined in [src/components/Todo.tsx:4](https://github.com/fwesss/reducer-todo/blob/580bc2f/reducer-todo/src/components/Todo.tsx#L4)*
+*Defined in [src/components/Todo.tsx:7](https://github.com/fwesss/reducer-todo/blob/24fbc8d/reducer-todo/src/components/Todo.tsx#L7)*
 
 #### Type declaration:
 
-* **dispatch**: *React.Dispatch‹object›*
+* **handleClick**(): *function*
+
+  * (): *void*
 
 * **todo**(): *object*
 
@@ -38,7 +40,7 @@
 
 ▸ **Todo**(`__namedParameters`: object): *Element‹›*
 
-*Defined in [src/components/Todo.tsx:13](https://github.com/fwesss/reducer-todo/blob/580bc2f/reducer-todo/src/components/Todo.tsx#L13)*
+*Defined in [src/components/Todo.tsx:16](https://github.com/fwesss/reducer-todo/blob/24fbc8d/reducer-todo/src/components/Todo.tsx#L16)*
 
 **Parameters:**
 
@@ -46,7 +48,7 @@
 
 Name | Type |
 ------ | ------ |
-`dispatch` | function |
+`handleClick` | function |
 `todo` | object |
 
 **Returns:** *Element‹›*

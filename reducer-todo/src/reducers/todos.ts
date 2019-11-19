@@ -1,4 +1,7 @@
+// Utils
 import { createReducer, updateItemInArray, updateObject } from '../utils/reducerFunctions';
+
+// Interfaces
 import Todo from '../interfaces/Todo';
 import State from '../interfaces/State';
 
@@ -26,14 +29,12 @@ const toggleTodo = (
   todosState: readonly Todo[],
   action: { readonly id: number }
 ): readonly object[] =>
-  updateItemInArray(todosState, action.id, (todo: { readonly completed: boolean }) => {
-    return updateObject(todo, { completed: !todo.completed });
-  });
+  updateItemInArray(todosState, action.id, (todo: { readonly completed: boolean }) =>
+    updateObject(todo, { completed: !todo.completed })
+  );
 
 const clearCompleted = (todoState: readonly Todo[]): readonly Todo[] =>
-  todoState.filter(todo => {
-    return !todo.completed;
-  });
+  todoState.filter(todo => !todo.completed);
 
 const todosReducer = createReducer({
   initialState: [],

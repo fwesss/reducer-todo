@@ -1,9 +1,9 @@
 import Todo from '../interfaces/Todo';
-import { HandlersFunctions, HandlersIndex } from '../interfaces/Handlers';
 
-export const updateObject = <T extends {}>(oldObject: T, newValues: T): T => {
-  return { ...oldObject, ...newValues };
-};
+export const updateObject = <T extends {}>(oldObject: T, newValues: T): T => ({
+  ...oldObject,
+  ...newValues
+});
 
 export const updateItemInArray = (
   array: readonly Todo[],
@@ -11,10 +11,25 @@ export const updateItemInArray = (
   updateItemCallback: {
     (todo: { readonly completed: boolean }): { readonly completed: boolean };
   }
-): readonly { readonly completed: boolean }[] => {
-  return array.map(item => {
-    return item.id !== itemId ? item : updateItemCallback(item);
-  });
+): readonly { readonly completed: boolean }[] =>
+  array.map(item => (item.id !== itemId ? item : updateItemCallback(item)));
+
+type HandlersFunctions = {
+  readonly ADD_TODO: (
+    todosState: readonly Todo[],
+    action: { readonly item: string; readonly id: number }
+  ) => readonly Todo[];
+
+  readonly TOGGLE_TODO: (
+    todosState: readonly Todo[],
+    action: { readonly id: number }
+  ) => readonly object[];
+
+  readonly CLEAR_COMPLETED: (todoState: readonly Todo[]) => readonly Todo[];
+};
+
+type HandlersIndex = {
+  readonly [key: string]: any;
 };
 
 type CreateReducerParams = {
@@ -22,9 +37,8 @@ type CreateReducerParams = {
   readonly handlers: HandlersFunctions & HandlersIndex;
 };
 
-export function createReducer({ initialState, handlers }: CreateReducerParams) {
-  return function reducer(state = initialState, action: { readonly type: string | number }) {
-    const { type } = action;
-    return Object.hasOwnProperty.call(handlers, type) ? handlers[type](state, action) : state;
-  };
-}
+export const createReducer = ({ initialState, handlers }: CreateReducerParams) => (
+  state = initialState,
+  action: { readonly type: string | number }
+) =>
+  Object.hasOwnProperty.call(handlers, action.type) ? handlers[action.type](state, action) : state;

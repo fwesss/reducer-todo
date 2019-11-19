@@ -1,20 +1,24 @@
+// React
 import React, { useReducer } from 'react';
+// UI
 import { Container } from '@material-ui/core';
-
+// Reducers
 import { appReducer, initialState } from '../reducers/todos';
+// Containers
+import TodoFormContainer from './TodoFormContainer';
+// Components
+import TodoList from '../components/TodoList';
 
-import TodoList from './TodoList';
-import TodoForm from '../components/TodoForm';
-
-const App: React.FC = () => {
+const AppContainer: React.FC = () => {
+  // Container state
   const [state, dispatch] = useReducer(appReducer, initialState);
 
   return (
     <Container>
       <TodoList state={state} dispatch={dispatch} />
-      <TodoForm dispatch={dispatch} />
+      <TodoFormContainer dispatch={dispatch} />
     </Container>
   );
 };
 
-export default App;
+export default AppContainer;

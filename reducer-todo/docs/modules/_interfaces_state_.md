@@ -14,7 +14,7 @@
 
 Ƭ **State**: *object*
 
-*Defined in [src/interfaces/State.ts:1](https://github.com/fwesss/reducer-todo/blob/580bc2f/reducer-todo/src/interfaces/State.ts#L1)*
+*Defined in [src/interfaces/State.ts:1](https://github.com/fwesss/reducer-todo/blob/24fbc8d/reducer-todo/src/interfaces/State.ts#L1)*
 
 #### Type declaration:
 
