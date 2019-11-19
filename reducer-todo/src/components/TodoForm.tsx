@@ -11,6 +11,7 @@ import {
   DialogContent,
   DialogTitle,
   Fab,
+  FormHelperText,
   TextField
 } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
@@ -24,6 +25,7 @@ type TodoFormProps = {
   readonly value: string;
   readonly handleClear: { (): void };
   readonly open: boolean;
+  readonly valid: boolean;
   readonly handleOpen: { (): void };
   readonly handleClose: { (): void };
 };
@@ -34,6 +36,7 @@ const TodoForm: FunctionComponent<TodoFormProps> = ({
   value,
   handleClear,
   open,
+  valid,
   handleOpen,
   handleClose
 }) => (
@@ -43,11 +46,13 @@ const TodoForm: FunctionComponent<TodoFormProps> = ({
       <DialogContent>
         <form onSubmit={handleSubmit}>
           <TextField
+            error={!valid}
             label="Add todo"
             variant="filled"
             onChange={handleChange}
             value={value}
             fullWidth
+            helperText={valid ? '' : 'Please enter a todo'}
           />
         </form>
       </DialogContent>

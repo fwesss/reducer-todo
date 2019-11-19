@@ -17,17 +17,26 @@ type TodoFormContainerProps = {
 const TodoFormContainer: FunctionComponent<TodoFormContainerProps> = ({ dispatch }) => {
   // Container state
   const [value, setValue] = useState('');
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [valid, setValid] = useState(true);
 
   const handleOpen = (): void => setOpen(true);
 
-  const handleClose = (): void => setOpen(false);
+  const handleClose = (): void => {
+    setOpen(false);
+    setValid(true);
+  };
 
   // Container functions
   const handleSubmit = (e: SyntheticEvent): void => {
     e.preventDefault();
-    dispatch({ type: ADD_TODO, id: new Date().getTime(), item: value });
-    setValue('');
+    if (value === '') {
+      setValid(false);
+    } else {
+      setValid(true);
+      dispatch({ type: ADD_TODO, id: new Date().getTime(), item: value });
+      setValue('');
+    }
   };
 
   const handleChange = (e: {
@@ -43,6 +52,7 @@ const TodoFormContainer: FunctionComponent<TodoFormContainerProps> = ({ dispatch
       value={value}
       handleClear={handleClear}
       open={open}
+      valid={valid}
       handleOpen={handleOpen}
       handleClose={handleClose}
     />
