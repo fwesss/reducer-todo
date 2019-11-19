@@ -52,7 +52,7 @@ const TodoForm: FunctionComponent<TodoFormProps> = ({
             onChange={handleChange}
             value={value}
             fullWidth
-            helperText={valid ? '' : 'Please enter a todo'}
+            helperText={!valid && 'Please enter a todo'}
           />
         </form>
       </DialogContent>
