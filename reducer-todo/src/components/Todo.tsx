@@ -1,7 +1,9 @@
 // React
 import React, { FunctionComponent } from 'react';
 // UI
-import { Card, CardActionArea, CardHeader } from '@material-ui/core';
+import { Fade, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import CheckBoxOutlinedIcon from '@material-ui/icons/CheckBoxOutlined';
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
 
 // Prop types
 type TodoProps = {
@@ -14,11 +16,14 @@ type TodoProps = {
 };
 
 const Todo: FunctionComponent<TodoProps> = ({ handleClick, todo }) => (
-  <Card raised={!todo.completed}>
-    <CardActionArea onClick={handleClick}>
-      <CardHeader title={todo.item} />
-    </CardActionArea>
-  </Card>
+  <Fade in>
+    <ListItem button onClick={handleClick}>
+      <ListItemIcon>
+        {todo.completed ? <CheckBoxOutlinedIcon /> : <CheckBoxOutlineBlankIcon />}
+      </ListItemIcon>
+      <ListItemText>{todo.item}</ListItemText>
+    </ListItem>
+  </Fade>
 );
 
 export default Todo;

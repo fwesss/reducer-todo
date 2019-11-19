@@ -1,4 +1,4 @@
-import Todo from '../interfaces/Todo';
+import { Todo } from '../types';
 
 export const updateObject = <T extends {}>(oldObject: T, newValues: T): T => ({
   ...oldObject,

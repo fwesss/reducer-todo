@@ -1,4 +1,4 @@
-type State = {
+export type State = {
   readonly todos: readonly {
     readonly item: string;
     readonly completed: boolean;
@@ -6,4 +6,8 @@ type State = {
   }[];
 };
 
-export default State;
+export type Todo = {
+  readonly item: string;
+  readonly completed: boolean;
+  readonly id: number;
+};

@@ -1,7 +1,19 @@
 // React
 import React, { FunctionComponent, SyntheticEvent } from 'react';
 // UI
-import { Box, Button, TextField } from '@material-ui/core';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+import {
+  Box,
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Fab,
+  TextField
+} from '@material-ui/core';
+import AddIcon from '@material-ui/icons/Add';
 
 // Prop types
 type TodoFormProps = {
@@ -11,25 +23,55 @@ type TodoFormProps = {
   };
   readonly value: string;
   readonly handleClear: { (): void };
+  readonly open: boolean;
+  readonly handleOpen: { (): void };
+  readonly handleClose: { (): void };
 };
 
 const TodoForm: FunctionComponent<TodoFormProps> = ({
   handleSubmit,
   handleChange,
   value,
-  handleClear
+  handleClear,
+  open,
+  handleOpen,
+  handleClose
 }) => (
   <Box>
-    <form onSubmit={handleSubmit}>
-      <TextField
-        label="Add todo"
-        variant="filled"
-        onChange={handleChange}
-        value={value}
-        fullWidth
-      />
-    </form>
-    <Button onClick={handleClear}>Clear Completed</Button>
+    <Dialog open={open} onClose={handleClose}>
+      <DialogTitle>Add Todo</DialogTitle>
+      <DialogContent>
+        <form onSubmit={handleSubmit}>
+          <TextField
+            label="Add todo"
+            variant="filled"
+            onChange={handleChange}
+            value={value}
+            fullWidth
+          />
+        </form>
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={handleClose} color="primary">
+          Cancel
+        </Button>
+        <Button onClick={handleSubmit} color="primary">
+          Add
+        </Button>
+      </DialogActions>
+    </Dialog>
+
+    <Fab
+      css={{ position: 'fixed', bottom: '2rem', right: '2rem' }}
+      color="primary"
+      aria-label="add"
+      onClick={handleOpen}
+    >
+      <AddIcon />
+    </Fab>
+    <Button css={{ margin: '2rem 0' }} color="secondary" variant="outlined" onClick={handleClear}>
+      Clear Completed
+    </Button>
   </Box>
 );
 

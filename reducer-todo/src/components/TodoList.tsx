@@ -1,9 +1,9 @@
 // React
 import React, { FunctionComponent } from 'react';
 // UI
-import { Paper } from '@material-ui/core';
-// Interfaces
-import State from '../interfaces/State';
+import { Paper, Box, Typography, List } from '@material-ui/core';
+// Types
+import { State } from '../types';
 // Containers
 import TodoContainer from '../containers/TodoContainer';
 
@@ -14,10 +14,18 @@ type TodoListProps = {
 };
 
 const TodoList: FunctionComponent<TodoListProps> = ({ state, dispatch }) => (
-  <Paper>
-    {state.todos.map(todo => (
-      <TodoContainer key={todo.id} todo={todo} dispatch={dispatch} />
-    ))}
+  <Paper elevation={2}>
+    <Box p={2} m={2}>
+      {state.todos.length > 0 ? (
+        <List>
+          {state.todos.map(todo => (
+            <TodoContainer key={todo.id} todo={todo} dispatch={dispatch} />
+          ))}
+        </List>
+      ) : (
+        <Typography variant="h5">Everything is done! Congrats!</Typography>
+      )}
+    </Box>
   </Paper>
 );
 

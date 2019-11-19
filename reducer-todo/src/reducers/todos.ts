@@ -1,9 +1,8 @@
 // Utils
 import { createReducer, updateItemInArray, updateObject } from '../utils/reducerFunctions';
 
-// Interfaces
-import Todo from '../interfaces/Todo';
-import State from '../interfaces/State';
+// Types
+import { State, Todo } from '../types';
 
 export const initialState = {
   todos: [

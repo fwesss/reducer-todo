@@ -17,6 +17,11 @@ type TodoFormContainerProps = {
 const TodoFormContainer: FunctionComponent<TodoFormContainerProps> = ({ dispatch }) => {
   // Container state
   const [value, setValue] = useState('');
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = (): void => setOpen(true);
+
+  const handleClose = (): void => setOpen(false);
 
   // Container functions
   const handleSubmit = (e: SyntheticEvent): void => {
@@ -37,6 +42,9 @@ const TodoFormContainer: FunctionComponent<TodoFormContainerProps> = ({ dispatch
       handleChange={handleChange}
       value={value}
       handleClear={handleClear}
+      open={open}
+      handleOpen={handleOpen}
+      handleClose={handleClose}
     />
   );
 };
